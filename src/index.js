@@ -1,10 +1,6 @@
-const app = document.getElementById('root')
-const heading = document.createElement('h1')
-class Home {
-	constructor(name) {
-		this.name = name
-	}
-}
-const home = new Home('OT')
-heading.textContent = home.name
-app.appendChild(heading)
+import meme from './images/programming-meme.jpg'
+
+const imgContainer = document.getElementById('container')
+const img = document.createElement('img')
+img.src = meme
+imgContainer.append(img)

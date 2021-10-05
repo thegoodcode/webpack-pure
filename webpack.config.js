@@ -17,6 +17,11 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				use: ['babel-loader']
+			},
+			// Images
+			{
+				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+				type: 'asset/resource'
 			}
 		]
 	},
