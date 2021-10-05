@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
 	entry: {
@@ -14,6 +15,7 @@ module.exports = {
 			title: 'webpack boilerplate',
 			template: path.resolve(__dirname, './src/template.html'),
 			filename: 'index.html'
-		})
+		}),
+		new CleanWebpackPlugin()
 	]
 }
