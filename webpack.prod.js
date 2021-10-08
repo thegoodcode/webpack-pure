@@ -11,6 +11,7 @@ module.exports = merge(common, {
 		filename: '[name].[contenthash].bundle.js'
 	},
 	mode: 'production',
+	devtool: false,
 	module: {
 		rules: [
 			// CSS, PostCSS, and Sass

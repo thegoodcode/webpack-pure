@@ -14,6 +14,7 @@ module.exports = merge(common, {
 		port: 5000,
 		hot: true
 	},
+	devtool: 'source-map',
 	module: {
 		rules: [
 			// CSS, PostCSS, and Sass
