@@ -16,9 +16,9 @@ let multipleHtmlPlugins = htmlPageNames.map(name => {
 module.exports = {
 	// Where webpack looks to start building the bundle
 	entry: {
-		main: path.resolve(__dirname, './src/index.js'),
-		example1: path.resolve(__dirname, './src/example1.js'),
-		example2: path.resolve(__dirname, './src/example2.js')
+		main: path.resolve(__dirname, './src/js/index.js'),
+		example1: path.resolve(__dirname, './src/js/example1.js'),
+		example2: path.resolve(__dirname, './src/js/example2.js')
 	},
 	// Where webpack outputs the assets and bundles
 	output: {

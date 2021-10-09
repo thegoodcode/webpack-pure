@@ -1,6 +1,6 @@
-import meme from './images/programming-meme.jpg'
-import svg from './images/black-swan.svg'
-import './styles/main.scss'
+import meme from '../images/programming-meme.jpg'
+import svg from '../images/black-swan.svg'
+import '../styles/main.scss'
 
 const imgContainer = document.getElementById('container')
 const img = document.createElement('img')
