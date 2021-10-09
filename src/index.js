@@ -1,9 +1,6 @@
 import meme from './images/programming-meme.jpg'
 import svg from './images/black-swan.svg'
 import './styles/main.scss'
-import { initServiceWorker } from './utils/initSW'
-
-initServiceWorker()
 
 const imgContainer = document.getElementById('container')
 const img = document.createElement('img')
