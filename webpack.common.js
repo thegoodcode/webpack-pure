@@ -1,12 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const path = require('path')
-// const CopyPlugin = require('copy-webpack-plugin')
 
 let htmlPageNames = ['example1', 'example2']
 let multipleHtmlPlugins = htmlPageNames.map(name => {
 	return new HtmlWebpackPlugin({
 		template: path.resolve(__dirname, `./src/${name}.html`),
+		favicon: path.resolve(__dirname, `./src/images/${name}-favicon.png`),
 		filename: `${name}.html`,
 		title: name,
 		chunks: [`${name}`]
@@ -28,29 +28,11 @@ module.exports = {
 	plugins: [
 		// Removes/cleans build folders and unused assets when rebuilding
 		new CleanWebpackPlugin(),
-		// Copies files from target to destination folder
-		// new CopyPlugin({
-		// 	patterns: [
-		// 		{
-		// 			from: paths.public,
-		// 			to: 'assets',
-		// 			globOptions: {
-		// 				ignore: ['*.DS_Store']
-		// 			},
-		// 			noErrorOnMissing: true
-		// 		}
-		// 	]
-		// }),
 		// Generates an HTML file from a template & deprecation warning
-		// new HtmlWebpackPlugin({
-		// 	title: 'webpack boilerplate',
-		// 	favicon: paths.src + '/images/favicon.png',
-		// 	template: paths.src + '/template.html', // template file
-		// 	filename: 'index.html' // output file
-		// })
 		new HtmlWebpackPlugin({
 			title: 'webpack boilerplate',
 			template: path.resolve(__dirname, './src/template.html'),
+			favicon: path.resolve(__dirname, './src/images/template-favicon.png'),
 			filename: 'index.html',
 			chunks: ['main']
 		})
@@ -64,13 +46,11 @@ module.exports = {
 				exclude: /node_modules/,
 				use: ['babel-loader']
 			},
-
 			// Images: Copy image files to build folder
 			{
 				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
 				type: 'asset/resource'
 			},
-
 			// Fonts and SVGs: Inline files
 			{
 				test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
